@@ -30,7 +30,18 @@
                 </form>
             </div>
     
-            
+        <h3>Basic Use</h3>
+        <p>A request is an object with a <code>template</code> property, and an optional
+            <code>options</code> property. Right now the only options is <code>random</code>.
+            Just <code>POST</code> to this URL, the response will be templated JSON.
+            <pre>
+{
+    template: [GOES HERE],
+    options: { //optional
+        random: true //default
+    }                    
+}</pre>
+        </p>
     
 
         <p>A template is valid JSON in itself and as such is an object with
@@ -136,7 +147,7 @@ $.mockJSON.data.US_STATE = [
             <h2>Extra's</h2>
             <p>Sometimes random is a bit <em>too</em> random. When you want to 
             have predictable, reproducible JSON generated: set the
-            <code>$.mockJSON.random = <strong>false</strong>.</code>
+            <code>options.random = <strong>false</strong>.</code>
         </div>
     </body>
 </html>
