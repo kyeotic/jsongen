@@ -14,6 +14,7 @@ $(function(){
             }]
         }]
     };
+    
     inputBox.val(JSON.stringify(starterTemplate, undefined, 2));
     
     var getIt = function() {
@@ -21,9 +22,9 @@ $(function(){
         $.ajax({
             url: '/',
             type: 'POST',
-            data: {
-                template: input
-            },
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ template: input }),
             success: function (response) {
                 console.log(response);
                 results.val(JSON.stringify(response, undefined, 2));
